@@ -43,3 +43,30 @@ private:
     bool _isRunning = false;
 };
 #endif
+
+#ifndef Sequencer_h
+#define Sequencer_h
+class Sequencer
+{
+public:
+    Sequencer(int size);
+    Sequencer(int size, int initialTiming[], int initialValues[]);
+    void load(int timing[], int values[]);
+    void start(int loops = 0);
+    void printDebug();
+    int check();
+    bool newVal();
+    void stop();
+
+private:
+    uint32_t _flagpole = 0;
+    uint32_t _interval = 0;
+    int _size = 0;
+    int *_timing;
+    int *_values;
+    int _loops = 0;
+    bool _isRunning = false;
+    int _sequencePosition = 0;
+    int _prevSeqPos = 0;
+};
+#endif
