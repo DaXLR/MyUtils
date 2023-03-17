@@ -1,12 +1,21 @@
 #include "Arduino.h"
 #include "MyUtils.h"
 
+/*
+Écrit par Fabien Lavoie (c) 2023
+Distribution et utilisation permise sous la license CC0 v1.0 Universal
+Permet entre autre l'utilisation complète privée ou commerciale, la distribution et la modification
+Voir la licence fournie avec cette librairie pour les conditions complètes
+
+Code entreposé sur https://github.com/DaXLR/MyUtils et maintenu par l'auteur.
+*/
+
 Timer::Timer()
 {
 }
 
 /*
-Initialise le Timer en mode millis()
+Initialise le Timer en mode millisecondes
 Le timer est repeating (reset automatiquement) par defaut
 */
 void Timer::start(unsigned long interval, bool repeating)
@@ -18,7 +27,7 @@ void Timer::start(unsigned long interval, bool repeating)
     _isRunning = true;
 }
 /*
-Initialise le Timer en mode micros()
+Initialise le Timer en mode microsecondes
 */
 void Timer::startMicro(unsigned long interval, bool repeating)
 {
@@ -29,7 +38,7 @@ void Timer::startMicro(unsigned long interval, bool repeating)
     _isRunning = true;
 }
 /*
-Verifie si l
+Retourner true si le timer à dépassé la durée prescrite
 */
 bool Timer::check()
 {
@@ -62,6 +71,7 @@ bool Timer::check()
         return false;
     }
 }
+
 bool Timer::_checkMicros()
 {
     if (micros() >= _flagpole + _interval)
@@ -82,9 +92,20 @@ bool Timer::_checkMicros()
     }
 }
 
+/*
+Arrête le timer
+*/
 void Timer::stop()
 {
     _interval = 0;
     _flagpole = 0;
     _isRunning = false;
+}
+
+/*
+Retourne true si le timer est présentement actif
+*/
+bool Timer::isRunning()
+{
+    return _isRunning;
 }

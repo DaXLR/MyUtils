@@ -1,6 +1,18 @@
 #include "Arduino.h"
 #include "MyUtils.h"
 
+/*
+Écrit par Fabien Lavoie (c) 2023
+Distribution et utilisation permise sous la license CC0 v1.0 Universal
+Permet entre autre l'utilisation complète privée ou commerciale, la distribution et la modification
+Voir la licence fournie avec cette librairie pour les conditions complètes
+
+Code entreposé sur https://github.com/DaXLR/MyUtils et maintenu par l'auteur.
+*/
+
+/*
+Contructeur. La pin est fixe pour chaque objet.
+*/
 PolyTone::PolyTone(int pin)
 {
     _pin = pin;
@@ -10,8 +22,8 @@ PolyTone::PolyTone(int pin)
 }
 
 /*
-Prepare la pin a osciller. Depend de la fonction update() pour actuellement produire du son.
-La duration de 0 par defaut signifie dure indetermine, autrement la fonction appelle noTone() par elle-meme
+Prescrit la fréquence d'oscillation. Depend de la fonction update() pour actuellement changer l'état de la pin
+La duration est en milliseconde. 0 par defaut signifie durée indeterminée.
 */
 void PolyTone::tone(int freq, unsigned long duration)
 {
@@ -51,7 +63,7 @@ void PolyTone::noTone()
 }
 
 /*
-Met a jour l'etat de la pin. Doit etre appelle ausi souvent que possible
+Met a jour l'etat de la pin. Doit etre appellé aussi souvent que possible
 */
 void PolyTone::update()
 {
@@ -75,7 +87,7 @@ void PolyTone::update()
 }
 
 /*
-Retourne true si la pin est presentement dormante
+Retourne true si la pin est présentement dormante
 */
 bool PolyTone::isAvailable()
 {

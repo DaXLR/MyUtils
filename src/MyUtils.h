@@ -33,6 +33,8 @@ public:
     void startMicro(unsigned long interval, bool repeating = true);
     bool check();
     void stop();
+    bool isRunning();
+    int flag = 0;
 
 private:
     bool _checkMicros();

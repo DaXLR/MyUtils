@@ -1,6 +1,6 @@
 {
     "board": "arduino:avr:uno",
     "programmer": "avrisp",
-    "sketch": "examples\\sandbox1\\sandbox1.ino",
+    "sketch": "examples\\timerdemo\\timerdemo.ino",
     "port": "COM3"
 }
