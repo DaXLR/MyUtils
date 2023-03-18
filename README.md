@@ -8,7 +8,7 @@ Les buts de cette librairie sont, en ordre d'importance;
 2. Regrouper dans une seule librairie une collection de classes que je trouve utile dans mes projets
 3. Rendre le code acessible pour les personnes en aprentissage
 
-Il y a plusieurs fonctions et structures dans Arduino qui se retrouvent un jour ou l'autre dans la pluspart des sketchs. Certaines de ces structures peuvent être difficiles à cerner pour les néophytes et ennuyantes a programmer pour les experts. Mon but avec les classes dans cette librairie est de simplifier mon propre travail tout en fournissant de la documentation aidant l'aprentissage des personnes qui se lancent sérieusement dans la programmation Arduino
+Il y a plusieurs fonctions et structures dans Arduino qui se retrouvent un jour ou l'autre dans la pluspart des sketchs. Certaines de ces structures peuvent être difficiles à cerner pour les néophytes et ennuyantes a constament reprogrammer pour les experts. Mon but avec les classes dans cette librairie est de simplifier mon propre travail tout en fournissant de la documentation aidant l'aprentissage des personnes qui se lancent sérieusement dans la programmation Arduino
 
 Le but premier étant mon propre perfectionnement (et malgré le fait que toutes ces fontions existent probablement ailleur sur le web) le code dans cette librairie est entièrement le mien. Je ne ferais pas d'effort significatif pour garder les fonctions consistantes ou ajouter des éléments indéfiniment. Ce n'est pas destiné a être une librairie de production mais bien d'aprentissage
 
