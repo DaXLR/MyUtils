@@ -72,3 +72,26 @@ private:
     int _prevSeqPos = 0;
 };
 #endif
+
+#ifndef Picker_h
+#define Picker_h
+class Picker
+{
+public:
+    Picker(int size);
+    Picker(int size, int weights[]);
+    Picker(int size, int values[], int weights[]);
+    void load(int weights[]);
+    void load(int values[], int weights[]);
+    int pickWeights();
+    int pickEqual();
+
+private:
+    int _size = 0;
+    int _totalWeight = 0;
+    int *_weights;
+    int *_values;
+    bool _customWeights = false;
+    bool _customValues = false;
+};
+#endif
