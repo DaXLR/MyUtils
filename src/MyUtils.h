@@ -57,6 +57,7 @@ public:
     void start(int loops = 0);
     void printDebug();
     int check();
+    int checkIndex();
     bool newVal();
     void stop();
 

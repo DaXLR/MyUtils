@@ -129,6 +129,45 @@ int Sequencer::check()
 }
 
 /*
+Meme chose que Sequencer.check() mais retourne l'index au lieu de la valeur
+*/
+int Sequencer::checkIndex()
+{
+
+    if (_isRunning)
+    {
+        if (millis() >= _flagpole + _interval)
+        {
+            _flagpole = _flagpole + _interval;
+
+            if (_sequencePosition < _size - 1)
+            {
+                _sequencePosition += 1;
+            }
+            else // Si la fin de la sequence est atteinte
+            {
+                _sequencePosition = 0;
+
+                if (_loops == 1)
+                {
+                    stop();
+                }
+                else if (_loops != 0)
+                {
+                    _loops -= 1;
+                }
+            }
+            _interval = _timing[_sequencePosition];
+        }
+        return _sequencePosition;
+    }
+    else
+    {
+        return -1;
+    }
+}
+
+/*
 Retourne true si une nouvelle valeur est disponible depuis la derniere fois que newVal() a ete appellée
 Initie également un check()
 */
